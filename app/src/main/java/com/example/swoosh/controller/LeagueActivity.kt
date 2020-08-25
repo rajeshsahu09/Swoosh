@@ -1,12 +1,12 @@
-package com.example.swoosh
+package com.example.swoosh.controller
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.example.swoosh.utilities.EXTRA_LEAGUE
+import com.example.swoosh.R
 import kotlinx.android.synthetic.main.activity_league.*
-import kotlinx.android.synthetic.main.activity_main.*
 
 class LeagueActivity : BaseActivity() {
     var selectedLeague = ""
@@ -22,17 +22,17 @@ class LeagueActivity : BaseActivity() {
     fun onMensClicked(view: View) {
         womensbtn.isChecked = false
         coedbtn.isChecked = false
-        selectedLeague = "men"
+        selectedLeague = "Men's"
     }
     fun onWomensClicked(view: View) {
         mensbtn.isChecked = false
         coedbtn.isChecked = false
-        selectedLeague = "women"
+        selectedLeague = "Women's"
     }
     fun onCoedClicked(view: View) {
         mensbtn.isChecked = false
         womensbtn.isChecked = false
-        selectedLeague = "coed"
+        selectedLeague = "Co-Ed"
     }
     fun onNextBtnClick(view: View) { // another way of onclick action for buttons :: cool
         if(!mensbtn.isChecked && !womensbtn.isChecked && !coedbtn.isChecked)
@@ -43,7 +43,6 @@ class LeagueActivity : BaseActivity() {
             startActivity(skillIntent)
         } else {
             Toast.makeText(this, "Select League Type \uD83D\uDE14", Toast.LENGTH_SHORT).show()
-            selectedLeague = ""
         }
     }
 }

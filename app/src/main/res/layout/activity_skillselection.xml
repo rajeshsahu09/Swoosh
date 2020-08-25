@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SkillselectionActivity">
+    tools:context=".controller.SkillselectionActivity">
 
     <ImageView
         android:id="@+id/skillbckimg"
@@ -58,12 +58,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4">
 
         <ToggleButton
-            android:id="@+id/beginbtn"
+            android:id="@+id/beginnerbtn"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:layout_weight="1"
             android:background="@drawable/swoosh_toggle"
             android:fontFamily="@font/montserrat"
+            android:onClick="onBeginnerClick"
             android:text="@string/beginner"
             android:textColor="@color/colorAccent"
             android:textOff="Beginner"
@@ -78,6 +79,7 @@
             android:layout_weight="1"
             android:background="@drawable/swoosh_toggle"
             android:fontFamily="@font/montserrat"
+            android:onClick="onBallerClick"
             android:text="@string/baller"
             android:textColor="@color/colorAccent"
             android:textOff="baller"
@@ -94,6 +96,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/swoosh_button"
         android:fontFamily="@font/montserrat"
+        android:onClick="onFinishClick"
         android:text="@string/finish"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
