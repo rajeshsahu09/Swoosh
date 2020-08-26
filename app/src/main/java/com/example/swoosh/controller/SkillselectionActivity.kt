@@ -12,10 +12,28 @@ import kotlinx.android.synthetic.main.activity_skillselection.*
 
 class SkillselectionActivity : BaseActivity() {
     lateinit var player: Player // if initialise later, right now just declare
+
+    /**
+     * when we change an activity from potrait to landscape or vice versa
+     * The current activity is destroyed.
+     * So we need to store the current activities values to pass onto other.
+     * onSaveInstanceState(outState: Bundle) --> save state in this fun
+     *  onRestoreInstanceState(savedInstanceState: Bundle) or "onCreate(savedInstanceState: Bundle?)"--> restore the values on this state
+     */
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelable(EXTRA_PLAYER, player)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_skillselection)
         player = intent.getParcelableExtra(EXTRA_PLAYER)!!
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        if(savedInstanceState != null) player = savedInstanceState.getParcelable(EXTRA_PLAYER)!!
     }
 
     fun onBeginnerClick(view: View) {
