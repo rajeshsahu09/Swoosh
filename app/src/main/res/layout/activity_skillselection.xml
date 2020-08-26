@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:fontFamily="@font/montserrat"
-        android:text="I am a : "
+        android:text="@string/i_am_a"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
